@@ -1,0 +1,155 @@
+// Deluppgift 1: först ska programmet skriva ut namnet på alla spelkort. Exempel: 'ruter ess', 'spader 7', 'hjärter kung' osv.
+
+
+let antal = 0;
+let sort = '';
+let kort = '';
+for (i = 1; i <= 4; i++) {
+  if (i === 1) {
+    sort = 'SPADER';
+  } else {
+    if (i === 2) {
+      sort = 'HJÄRTER';
+    } else {
+      if (i === 3) {
+        sort = 'RUTER';
+      } else {
+        sort = 'KLÖVER';
+      }
+    }
+  }
+
+  for (j = 1; j <= 13; j++) {
+    if (j === 1) {
+      kort = 'ESS';
+    } else {
+      if (j === 11) {
+        kort = 'KNEKT';
+      } else {
+        if (j === 12) {
+          kort = 'DAM';
+        } else {
+          if (j === 13) {
+            kort = 'KUNG';
+          } else {
+            kort = j;
+          }
+        }
+      }
+    }
+    antal ++
+    console.log(antal + ' - ' + sort, kort);
+  }
+  console.log('');
+}
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+//Deluppgift 2: programmet ska dra två spelkort och tala om vilka de är.
+
+function spelkort(from, to) {
+  return Math.floor(Math.random() * (to + 1 - from)) + from;
+}
+for (i = 1; i <= 2; i++) {
+  let cardNumber = spelkort(1, 13);
+  let cardType = spelkort(1, 4);
+
+  if (cardType === 1) {
+    sort = 'SPADER';
+  } else {
+    if (cardType === 2) {
+      sort = 'HJÄRTER';
+    } else {
+      if (cardType === 3) {
+        sort = 'RUTER';
+      } else {
+        sort = 'KLÖVER';
+      }
+    }
+  }
+  if (cardNumber === 1) {
+    kort = 'ESS';
+  } else {
+    if (cardNumber === 11) {
+      kort = 'KNEKT';
+    } else {
+      if (cardNumber === 12) {
+        kort = 'DAM';
+      } else {
+        if (cardNumber === 13) {
+          kort = 'KUNG';
+        } else {
+          kort = cardNumber;
+        }
+      }
+    }
+   }
+    console.log('Kort nummer ' + i + ' är: ' + sort, kort);
+  
+}
+
+-------------------------------------------------------------------------------------------------------------------------------
+/*
+Deluppgift 3: programmet ska tala om vilken den bästa poker-kombinationen är.
+
+1 Om korten har samma valör är det par
+2 Om korten har olika valör gäller kortet med högst värde (obs, ess räknas som höst)
+*/
+
+let sort = '';
+let kort = '';
+let kort1 = '';
+function spelkort(from, to) {
+  return Math.floor(Math.random() * (to + 1 - from)) + from;
+}
+for (i = 1; i <= 2; i++) {
+  let cardNumber = spelkort(1, 13);
+  let cardType = spelkort(1, 4);
+
+  if (cardType === 1) {
+    sort = 'SPADER';
+  } else {
+    if (cardType === 2) {
+      sort = 'HJÄRTER';
+    } else {
+      if (cardType === 3) {
+        sort = 'RUTER';
+      } else {
+        sort = 'KLÖVER';
+      }
+    }
+  }
+  if (cardNumber === 1) {
+    kort = 'ESS';
+  } else {
+    if (cardNumber === 11) {
+      kort = 'KNEKT';
+    } else {
+      if (cardNumber === 12) {
+        kort = 'DAM';
+      } else {
+        if (cardNumber === 13) {
+          kort = 'KUNG';
+        } else {
+          kort = cardNumber;
+        }
+      }
+    }
+  }
+  console.log('Kort nummer ' + i + ' är: ' + sort, kort);
+  if (i === 1) {
+    kort1 = cardNumber;
+  } else {
+    if (cardNumber === kort1) {
+      console.log('-----( Det är PAR )-----');
+    } else {
+      if (cardNumber > kort1 || cardNumber === 1) {
+        console.log('(Kort nummer 2 är Högst)');
+      } else {
+        console.log('(Kort nummer 1 är Högst)');
+      }
+    }
+  }
+}
+
+
